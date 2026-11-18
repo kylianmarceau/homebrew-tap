@@ -17,11 +17,26 @@ cask "merlin" do
 
   app "Merlin.app"
 
+  # Quits a running Merlin before an upgrade or uninstall replaces the app.
+  uninstall quit: "io.github.kylianmarceau.merlin"
+
+  # `brew uninstall --zap` also removes Merlin's data: the paths in Merlin's
+  # README, "Uninstalling".
+  zap trash: [
+    "~/.config/modal_browser",
+    "~/.local/share/modal_browser",
+    "~/Library/Application Support/Merlin",
+    "~/Library/Caches/Merlin",
+    "~/Library/HTTPStorages/io.github.kylianmarceau.merlin",
+    "~/Library/Preferences/io.github.kylianmarceau.merlin.plist",
+    "~/Library/WebKit/io.github.kylianmarceau.merlin",
+  ]
+
   caveats <<~EOS
-    Merlin is ad-hoc signed and is not notarized by Apple.
+    Merlin is not notarized by Apple.
     After the first launch attempt, open System Settings > Privacy & Security
     and click Open Anyway for Merlin, then confirm Open.
 
-    Quit Merlin before upgrading. Your browser profile and settings are kept.
+    Upgrading quits Merlin first. Your browser profile and settings are kept.
   EOS
 end

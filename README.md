@@ -9,18 +9,20 @@ brew install --cask kylianmarceau/tap/merlin
 ```
 
 After the first launch attempt, open **System Settings > Privacy & Security**
-and click **Open Anyway** for Merlin, then confirm **Open**. Merlin is ad-hoc
-signed and is not notarized by Apple. Homebrew uses the normal macOS
+and click **Open Anyway** for Merlin, then confirm **Open**. Merlin is not
+notarized by Apple. Homebrew uses the normal macOS
 quarantine protections.
 
-Quit Merlin, then update it with:
+Update it with:
 
 ```sh
 brew update
 brew upgrade --cask kylianmarceau/tap/merlin
 ```
 
-Your browser profile and settings are kept. Homebrew does not upgrade it in
+The upgrade quits a running Merlin first. Your browser profile and settings
+are kept. `brew uninstall --cask merlin` keeps them too; add `--zap` to
+remove Merlin's profile, configuration, workspaces and preferences as well. Homebrew does not upgrade it in
 the background; run the commands above when you want to update.
 
 If Merlin was installed by dragging it into Applications, quit it and use
