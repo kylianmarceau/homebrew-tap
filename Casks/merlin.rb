@@ -1,6 +1,6 @@
 cask "merlin" do
-  version "0.5.5"
-  sha256 "16ddeb80ca48a102ce02768376f73ba8a503ee0a5f18bb9641dddca3cb8578c5"
+  version "0.5.6"
+  sha256 "823b602685f684faf3e683d0b8b81c101a1df8122a2866b53b2578a1e161603a"
 
   url "https://github.com/kylianmarceau/merlin/releases/download/v#{version}/Merlin-#{version}-arm64.dmg"
   name "Merlin"
